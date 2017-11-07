@@ -32,6 +32,7 @@
 		980471211FB08FC200378FEE /* CustomerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980471201FB08FC200378FEE /* CustomerTableViewCell.swift */; };
 		9883BE3D1FB1926C00727B77 /* Customer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9883BE3C1FB1926C00727B77 /* Customer.storyboard */; };
 		9883BE3F1FB192F700727B77 /* CustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9883BE3E1FB192F700727B77 /* CustomerViewController.swift */; };
+		9883BE411FB1A12000727B77 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 980470F61FB0263400378FEE /* Info.plist */; };
 		B64D47AE1A8624311B7DB29D /* Pods_BookYourTable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 755E3E670E0076F45C95A180 /* Pods_BookYourTable.framework */; };
 /* End PBXBuildFile section */
 
@@ -115,6 +116,7 @@
 				9883BE3B1FB1925B00727B77 /* Customer */,
 				9883BE401FB19F1600727B77 /* Supporting files */,
 				980470EE1FB0263400378FEE /* BookYourTable.xcdatamodeld */,
+				980470F61FB0263400378FEE /* Info.plist */,
 			);
 			path = BookYourTable;
 			sourceTree = "<group>";
@@ -176,7 +178,6 @@
 		9883BE401FB19F1600727B77 /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
-				980470F61FB0263400378FEE /* Info.plist */,
 				980470F11FB0263400378FEE /* Assets.xcassets */,
 				980470FC1FB0266100378FEE /* Podfile */,
 				980471051FB035B800378FEE /* UIWindow + VisibleViewController.swift */,
@@ -260,6 +261,7 @@
 			files = (
 				980471001FB02AFA00378FEE /* Sign In.storyboard in Resources */,
 				980470F51FB0263400378FEE /* LaunchScreen.storyboard in Resources */,
+				9883BE411FB1A12000727B77 /* Info.plist in Resources */,
 				980470F21FB0263400378FEE /* Assets.xcassets in Resources */,
 				9804710D1FB03FE100378FEE /* Table.storyboard in Resources */,
 				9883BE3D1FB1926C00727B77 /* Customer.storyboard in Resources */,

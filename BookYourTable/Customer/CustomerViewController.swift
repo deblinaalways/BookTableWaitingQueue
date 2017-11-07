@@ -50,11 +50,11 @@ class CustomerViewController: UIViewController {
                         if let tableID = customer.value["tableID"] as? String {
                             self.ref.child(Table.tables.rawValue).child(tableID).observeSingleEvent(of: .value, with: { snapshot in
                                 if let table = snapshot.value as? [String: AnyObject] {
-                                        let tableName = table["tableName"] as? String
-                                        DispatchQueue.main.async {
-                                            self.label1.text = "Congrats! table has been booked"
-                                            self.label2.text = tableName!
-                                        }
+                                    let tableName = table["tableName"] as? String
+                                    DispatchQueue.main.async {
+                                        self.label1.text = "Congrats! table has been booked"
+                                        self.label2.text = tableName!
+                                    }
                                 }
                             })
                         } else if let waitTime = customer.value["waitTime"] as? Int, waitTime > 0 {
@@ -63,9 +63,14 @@ class CustomerViewController: UIViewController {
                                 self.label2.text = "Avg waiting time: \(waitTime) mins"
                             }
                         }
+                    } else {
+                        DispatchQueue.main.async {
+                            self.label1.text = "You are not registered yet"
+                            self.label2.text = ""
+                        }
                     }
-                    }
-                   
+                }
+                
             } else { // customer doesn't exist in the database
                 DispatchQueue.main.async {
                     self.label1.text = "You are not registered yet"
