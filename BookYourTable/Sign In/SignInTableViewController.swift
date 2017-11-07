@@ -27,7 +27,7 @@ class SignInTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = false
-        self.title = "Sign In"
+        self.title = "\(signInType.rawValue)" + "Sign In"
     }
 
     // TODO: emailID verification
@@ -77,7 +77,11 @@ class SignInTableViewController: UITableViewController {
                 DispatchQueue.main.async {
                     self.activityIndicator.stop()
                     AlertController.present(title: "Sign In", message: "Sign In Successful.", from: self, okAction: {
-                        self.checkTablesExist()
+                        if self.signInType == SignInType.customer {
+                           (UIApplication.shared.delegate as! AppDelegate).window?.rootViewController = CustomerViewController.viewController()
+                        } else {
+                           self.checkTablesExist()
+                        }
                     })
                 }
             }

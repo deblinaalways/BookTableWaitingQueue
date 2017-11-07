@@ -25,7 +25,6 @@ class AddTableViewController: UIViewController {
         self.ref = Database.database().reference()
     }
 
-    
     @IBAction func addTableTapped(_ sender: UIButton) {
         guard let number = numberTextField.text, !number.isEmpty, number != "0" else {
             AlertController.present(title: "Number of Table", message: "Please add valid number of tables in your restaurant.")
@@ -36,6 +35,7 @@ class AddTableViewController: UIViewController {
                 let request = AddTableRequest(tableID: UUID().uuidString, tableName: "Table - \(t)", isOccupied: false, customerID: nil)
                 ref.child(Table.tables.rawValue).child(request.tableID).setValue(request.json)
             }
+            numberTextField.resignFirstResponder()
             (UIApplication.shared.delegate as! AppDelegate).window?.rootViewController = ResTablesTableViewController.navigate()
         }
     }

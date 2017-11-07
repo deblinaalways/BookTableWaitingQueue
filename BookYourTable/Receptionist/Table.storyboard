@@ -314,6 +314,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="7oB-Dk-65y">
+                        <barButtonItem key="leftBarButtonItem" title="Sign out" id="c6h-Zk-sf3">
+                            <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="signOutButtonTapped:" destination="rgH-yM-0mo" id="X0H-3A-prb"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Customers" id="Srr-jD-EMG">
                             <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>

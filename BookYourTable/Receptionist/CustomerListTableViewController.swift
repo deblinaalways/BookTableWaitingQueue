@@ -28,7 +28,8 @@ class CustomerListTableViewController: UITableViewController {
     fileprivate func configureTableUI() {
         self.customerList = [Customer]()
         if let ref = ref {
-            ref.child(Table.customers.rawValue).observe(.value) { snapshot in
+            var handle: UInt = 0
+            ref.child(Table.customers.rawValue).observeSingleEvent(of: .value, with: {snapshot in
                 if snapshot.childrenCount > 0 , let snapDict = snapshot.value as? [String: AnyObject] {
                     for child in snapDict {
                         let customerID    = child.value["customerID"] as! String//["tableID"].stringValue
@@ -42,7 +43,7 @@ class CustomerListTableViewController: UITableViewController {
                     }
                     self.tableView.reloadData()
                 }
-            }
+            })
         }
     }
     

@@ -8,7 +8,6 @@
 
 import UIKit
 import Firebase
-import SwiftyJSON
 
 /***
  To read data at a path and listen for changes, use the observeEventType:withBlock orobserveSingleEventOfType:withBlock methods of FIRDatabaseReference to observe FIRDataEventTypeValue events.
@@ -41,23 +40,28 @@ class ResTablesTableViewController: UITableViewController {
     fileprivate func configureTableUI() {
         self.tableList = [TableData]()
         if let ref = ref {
-            ref.child(Table.tables.rawValue).observe(.value) { snapshot in
+            ref.child(Table.tables.rawValue).observeSingleEvent(of: .value) { snapshot in
                 if snapshot.childrenCount > 0 , let snapDict = snapshot.value as? [String: AnyObject] {
                     for child in snapDict {
-                        let tableID    = child.value["tableID"] as! String//["tableID"].stringValue
-                        let tableName  = child.value["tableName"] as! String
-                        let isOccupied = child.value["isOccupied"] as! Bool
+                        let tableID    = child.value["tableID"] as? String
+                        let tableName  = child.value["tableName"] as? String
+                        let isOccupied = child.value["isOccupied"] as? Bool
                         var customerID: String?
                         if let id = child.value["customerID"] as? String { customerID = id }
                         let data = TableData(tableID: tableID, tableName: tableName, isOccupied: isOccupied, customerID: customerID)
                         self.tableList.append(data)
                     }
                     self.tableView.reloadData()
+                } else { // No table found
+                    self.present(AddTableViewController.viewcontroller(), animated: true, completion: nil)
                 }
             }
         }
     }
 
+    @IBAction func signOutButtonTapped(_ sender: UIBarButtonItem) {
+        try! Auth.auth().signOut()
+    }
     
     @IBAction func customerListButtonTapped(_ sender: UIBarButtonItem) {
         self.navigationController?.pushViewController(CustomerListTableViewController.viewController(), animated: true)

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Customer View Controller-->
+        <scene sceneID="eTC-qn-Cic">
+            <objects>
+                <viewController storyboardIdentifier="CustomerViewController" id="xmr-T7-NWh" customClass="CustomerViewController" customModule="BookYourTable" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Q9j-a2-QZz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tF7-HA-jvp">
+                                <rect key="frame" x="168" y="324.5" width="37.5" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hX8-7L-5Fn">
+                                <rect key="frame" x="165.5" y="358.5" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hcB-1v-HrW">
+                                <rect key="frame" x="302" y="36" width="57" height="30"/>
+                                <state key="normal" title="Sign out">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="signoutButtonTapped:" destination="xmr-T7-NWh" eventType="touchUpInside" id="hBK-9E-gZT"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your emailID" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sHJ-In-anj">
+                                <rect key="frame" x="16" y="194.5" width="343" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="BW5-zY-asZ"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fed-6k-RV3">
+                                <rect key="frame" x="166" y="274.5" width="44" height="30"/>
+                                <state key="normal" title="Check"/>
+                                <connections>
+                                    <action selector="checkButtonTapped:" destination="xmr-T7-NWh" eventType="touchUpInside" id="j0y-XX-0vW"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="tF7-HA-jvp" firstAttribute="centerY" secondItem="Q9j-a2-QZz" secondAttribute="centerY" id="5Tu-02-Djl"/>
+                            <constraint firstItem="hcB-1v-HrW" firstAttribute="top" secondItem="47f-YP-tjc" secondAttribute="top" constant="16" id="FnC-PL-xyZ"/>
+                            <constraint firstItem="47f-YP-tjc" firstAttribute="trailing" secondItem="sHJ-In-anj" secondAttribute="trailing" constant="16" id="GSG-6X-jrx"/>
+                            <constraint firstItem="sHJ-In-anj" firstAttribute="leading" secondItem="47f-YP-tjc" secondAttribute="leading" constant="16" id="HGr-ON-CQJ"/>
+                            <constraint firstItem="sHJ-In-anj" firstAttribute="centerX" secondItem="tF7-HA-jvp" secondAttribute="centerX" id="IVr-6s-NBh"/>
+                            <constraint firstItem="tF7-HA-jvp" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="47f-YP-tjc" secondAttribute="leading" constant="16" id="Itl-bN-hNW"/>
+                            <constraint firstItem="47f-YP-tjc" firstAttribute="trailing" secondItem="hcB-1v-HrW" secondAttribute="trailing" constant="16" id="Ljr-kz-l54"/>
+                            <constraint firstItem="hX8-7L-5Fn" firstAttribute="centerX" secondItem="tF7-HA-jvp" secondAttribute="centerX" id="N1X-0f-gcf"/>
+                            <constraint firstItem="fed-6k-RV3" firstAttribute="centerX" secondItem="sHJ-In-anj" secondAttribute="centerX" id="OoC-Cf-5rL"/>
+                            <constraint firstItem="tF7-HA-jvp" firstAttribute="centerX" secondItem="Q9j-a2-QZz" secondAttribute="centerX" id="RCt-Hn-ADN"/>
+                            <constraint firstItem="hX8-7L-5Fn" firstAttribute="top" secondItem="tF7-HA-jvp" secondAttribute="bottom" constant="16" id="TG5-FG-twP"/>
+                            <constraint firstItem="47f-YP-tjc" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hX8-7L-5Fn" secondAttribute="trailing" constant="16" id="WhE-iq-czd"/>
+                            <constraint firstItem="fed-6k-RV3" firstAttribute="top" secondItem="sHJ-In-anj" secondAttribute="bottom" constant="40" id="XuD-o2-PJ1"/>
+                            <constraint firstItem="hX8-7L-5Fn" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="47f-YP-tjc" secondAttribute="leading" constant="16" id="aRa-VV-SgJ"/>
+                            <constraint firstItem="tF7-HA-jvp" firstAttribute="top" secondItem="fed-6k-RV3" secondAttribute="bottom" constant="20" id="jzv-Nh-efT"/>
+                            <constraint firstItem="47f-YP-tjc" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="tF7-HA-jvp" secondAttribute="trailing" constant="16" id="wTF-LF-xF9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="47f-YP-tjc"/>
+                    </view>
+                    <connections>
+                        <outlet property="emailIDTextField" destination="sHJ-In-anj" id="GlQ-yp-adr"/>
+                        <outlet property="label1" destination="tF7-HA-jvp" id="A7F-Uz-hoE"/>
+                        <outlet property="label2" destination="hX8-7L-5Fn" id="oTL-lp-Yhu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Igt-h1-WTd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2.3999999999999999" y="238.83058470764618"/>
+        </scene>
+    </scenes>
+</document>
