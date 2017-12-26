@@ -25,7 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 } else if user.email == "customer@gmail.com" {
                     self.window?.rootViewController = CustomerViewController.viewController()
                 }
-                
             } else {
                 self.window?.rootViewController = HomeScreenViewController.viewController()
             }

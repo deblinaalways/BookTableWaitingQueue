@@ -102,6 +102,8 @@ class AddCustomerTableViewController: UITableViewController {
                             }
                         }
                     })
+                    
+                    
                 }
                 ref.removeObserver(withHandle: handle)
             })
